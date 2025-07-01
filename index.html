@@ -5,17 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="mobile-web-app-capable" content="yes">
-  <link rel="manifest" href="manifest.json">
 
   <script>
-    // Spoof user-agent to trick SoundCloud into always loading desktop version
+    // Force desktop version by spoofing the user agent
     Object.defineProperty(navigator, 'userAgent', {
       get: function () {
         return "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko)";
       }
     });
 
-    // Redirect to SoundCloud
+    // Redirect to main SoundCloud homepage
     location.replace("https://soundcloud.com/");
   </script>
 </head>
