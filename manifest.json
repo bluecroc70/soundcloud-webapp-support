@@ -1,7 +1,8 @@
 {
   "name": "SoundCloud",
   "short_name": "SoundCloud",
-  "start_url": "/",
+  "start_url": "/soundcloud-webapp-support/",
+  "scope": "/soundcloud-webapp-support/",
   "display": "standalone",
   "background_color": "#FF5500",
   "theme_color": "#FF5500",
@@ -9,7 +10,7 @@
     {
       "src": "https://styles.redditmedia.com/t5_2rny1/styles/communityIcon_f2bycba620se1.jpg?format=pjpg&s=ac9230df0b7d9d5c9a109026439e456480b716e0",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/jpeg"
     }
   ]
 }
