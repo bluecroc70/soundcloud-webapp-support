@@ -4,10 +4,6 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Open SoundCloud</title>
-
-<!-- Favicon -->
-<link rel="icon" type="image/png" href="https://d21buns5ku92am.cloudfront.net/26628/images/419679-1x1_SoundCloudLogo_cloudmark-f5912b-large-1645807040.jpg" />
-
 <style>
   body, html {
     margin: 0; padding: 0;
@@ -40,16 +36,10 @@
 
   <script>
     document.getElementById('open-sc').addEventListener('click', () => {
-      // Spoof user-agent by redefining navigator.__proto__.userAgent — more reliable cross-browser
-      try {
-        Object.defineProperty(navigator.__proto__, 'userAgent', {
-          get: () => "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko)",
-          configurable: true
-        });
-      } catch (e) {
-        // fallback: do nothing if unable to override
-        console.warn('UserAgent spoof failed:', e);
-      }
+      // Spoof user-agent to force desktop mode
+      Object.defineProperty(navigator, 'userAgent', {
+        get: () => "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko)"
+      });
       location.replace("https://soundcloud.com/");
     });
   </script>
