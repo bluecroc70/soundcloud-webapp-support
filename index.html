@@ -1,23 +1,47 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>SoundCloud</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="mobile-web-app-capable" content="yes">
-
-  <script>
-    // Force desktop version by spoofing the user agent
-    Object.defineProperty(navigator, 'userAgent', {
-      get: function () {
-        return "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko)";
-      }
-    });
-
-    // Redirect to main SoundCloud homepage
-    location.replace("https://soundcloud.com/");
-  </script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Open SoundCloud</title>
+<style>
+  body, html {
+    margin: 0; padding: 0;
+    height: 100%;
+    background-color: #1c1c1c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: system-ui, sans-serif;
+  }
+  button {
+    background: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+    padding: 1em 2em;
+    font-size: 1.2rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  button:hover, button:focus {
+    background-color: #fff;
+    color: #1c1c1c;
+    outline: none;
+  }
+</style>
 </head>
 <body>
+  <button id="open-sc">Open SoundCloud</button>
+
+  <script>
+    document.getElementById('open-sc').addEventListener('click', () => {
+      // Spoof user-agent to force desktop mode
+      Object.defineProperty(navigator, 'userAgent', {
+        get: () => "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko)"
+      });
+      location.replace("https://soundcloud.com/");
+    });
+  </script>
 </body>
 </html>
