@@ -1,8 +1,8 @@
 {
   "name": "SoundCloud",
   "short_name": "SoundCloud",
-  "start_url": "/soundcloud-webapp-support/",
-  "scope": "/soundcloud-webapp-support/",
+  "start_url": "/",
+  "scope": "/",
   "display": "standalone",
   "background_color": "#FF5500",
   "theme_color": "#FF5500",
