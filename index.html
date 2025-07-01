@@ -36,11 +36,8 @@
 
   <script>
     document.getElementById('open-sc').addEventListener('click', () => {
-      // Spoof user-agent to force desktop mode
-      Object.defineProperty(navigator, 'userAgent', {
-        get: () => "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko)"
-      });
-      location.replace("https://soundcloud.com/");
+      // Redirect to SoundCloud desktop site
+      window.location.href = "https://soundcloud.com/?mobile=no";
     });
   </script>
 </body>
